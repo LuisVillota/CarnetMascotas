@@ -40,6 +40,16 @@ export interface Deworming {
   notes?: string
 }
 
+export interface Appointment {
+  id: string
+  petId: string
+  date: string
+  time: string
+  type: string
+  status: 'programada' | 'completada' | 'cancelada'
+  notes?: string
+}
+
 export interface Reminder {
   id: string
   petId: string
@@ -176,6 +186,197 @@ export const demoDewormings: Deworming[] = [
     nextDate: '2026-03-15',
     weight: 4.5
   }
+]
+
+// All pets across all owners (for vet view)
+export const allDemoPets: Pet[] = [
+  ...demoPets,
+  {
+    id: '3',
+    ownerId: '3',
+    name: 'Rocky',
+    species: 'perro',
+    breed: 'Bulldog Frances',
+    birthDate: '2021-08-10',
+    weight: 12,
+    createdAt: '2024-03-15'
+  },
+  {
+    id: '4',
+    ownerId: '4',
+    name: 'Mia',
+    species: 'gato',
+    breed: 'Persa',
+    birthDate: '2023-01-05',
+    weight: 3.8,
+    createdAt: '2024-04-20'
+  },
+  {
+    id: '5',
+    ownerId: '5',
+    name: 'Thor',
+    species: 'perro',
+    breed: 'Pastor Aleman',
+    birthDate: '2020-11-22',
+    weight: 35,
+    createdAt: '2024-01-05'
+  },
+  {
+    id: '6',
+    ownerId: '6',
+    name: 'Cleo',
+    species: 'gato',
+    breed: 'Maine Coon',
+    birthDate: '2022-07-14',
+    weight: 6.2,
+    createdAt: '2024-05-10'
+  },
+  {
+    id: '7',
+    ownerId: '7',
+    name: 'Bruno',
+    species: 'perro',
+    breed: 'Labrador',
+    birthDate: '2023-04-30',
+    weight: 25,
+    createdAt: '2024-06-01'
+  },
+]
+
+// All vaccines across all pets (for vet view)
+export const allDemoVaccines: Vaccine[] = [
+  ...demoVaccines,
+  {
+    id: '6',
+    petId: '3',
+    name: 'Rabia',
+    date: '2026-02-10',
+    nextDate: '2027-02-10',
+    vetName: 'Dr. Carlos Rodriguez',
+    vetClinic: 'Clinica Veterinaria del Valle',
+    batch: 'RAB-2026-012'
+  },
+  {
+    id: '7',
+    petId: '4',
+    name: 'Triple Felina',
+    date: '2026-03-05',
+    nextDate: '2027-03-05',
+    vetName: 'Dr. Carlos Rodriguez',
+    vetClinic: 'Clinica Veterinaria del Valle'
+  },
+  {
+    id: '8',
+    petId: '5',
+    name: 'Parvovirus',
+    date: '2026-01-20',
+    nextDate: '2027-01-20',
+    vetName: 'Dr. Carlos Rodriguez',
+    vetClinic: 'Clinica Veterinaria del Valle',
+    batch: 'PAR-2026-078'
+  },
+  {
+    id: '9',
+    petId: '6',
+    name: 'Rabia',
+    date: '2026-03-18',
+    nextDate: '2027-03-18',
+    vetName: 'Dr. Carlos Rodriguez',
+    vetClinic: 'Clinica Veterinaria del Valle'
+  },
+  {
+    id: '10',
+    petId: '7',
+    name: 'Rabia',
+    date: '2026-02-28',
+    nextDate: '2027-02-28',
+    vetName: 'Dr. Carlos Rodriguez',
+    vetClinic: 'Clinica Veterinaria del Valle',
+    batch: 'RAB-2026-034'
+  },
+]
+
+// Demo appointments (for vet agenda view)
+export const demoAppointments: Appointment[] = [
+  {
+    id: '1',
+    petId: '1',
+    date: '2026-04-09',
+    time: '09:00',
+    type: 'vacunacion',
+    status: 'programada',
+    notes: 'Refuerzo anual de rabia'
+  },
+  {
+    id: '2',
+    petId: '3',
+    date: '2026-04-09',
+    time: '10:30',
+    type: 'consulta',
+    status: 'programada',
+    notes: 'Control de peso'
+  },
+  {
+    id: '3',
+    petId: '4',
+    date: '2026-04-09',
+    time: '11:00',
+    type: 'desparasitacion',
+    status: 'completada'
+  },
+  {
+    id: '4',
+    petId: '2',
+    date: '2026-04-10',
+    time: '09:30',
+    type: 'vacunacion',
+    status: 'programada',
+    notes: 'Triple felina'
+  },
+  {
+    id: '5',
+    petId: '5',
+    date: '2026-04-10',
+    time: '14:00',
+    type: 'cirugia',
+    status: 'programada',
+    notes: 'Esterilizacion'
+  },
+  {
+    id: '6',
+    petId: '6',
+    date: '2026-04-11',
+    time: '10:00',
+    type: 'consulta',
+    status: 'programada'
+  },
+  {
+    id: '7',
+    petId: '7',
+    date: '2026-04-11',
+    time: '16:00',
+    type: 'vacunacion',
+    status: 'programada',
+    notes: 'Primera dosis parvovirus'
+  },
+  {
+    id: '8',
+    petId: '1',
+    date: '2026-04-07',
+    time: '09:00',
+    type: 'consulta',
+    status: 'completada',
+    notes: 'Revision general'
+  },
+  {
+    id: '9',
+    petId: '3',
+    date: '2026-04-06',
+    time: '11:00',
+    type: 'vacunacion',
+    status: 'cancelada',
+    notes: 'Propietario cancelo'
+  },
 ]
 
 export const demoReminders: Reminder[] = [
